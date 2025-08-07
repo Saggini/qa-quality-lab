@@ -1,0 +1,43 @@
+🧪 QA QualityLab
+
+Projeto de Portfólio | Qualidade de Software e Automação de Testes
+
+Objetivo:
+Simular um ambiente real de testes com foco em APIs, containers, banco de dados e versionamento de código. Desenvolvido para demonstrar habilidades práticas em automação de testes e ferramentas modernas utilizadas na área de QA.
+
+🔧 Tecnologias e Ferramentas
+Cypress (JavaScript) – Testes end-to-end e integração.
+
+Postman – Testes de APIs REST com coleção automatizada.
+
+Docker + Kubernetes – Execução de ambientes isolados para testes.
+
+PostgreSQL / SQL Server – Validação de dados no banco.
+
+Git + Bitbucket – Versionamento de código.
+
+Node.js + Express.js – Backend simples para testes.
+
+Angular – Frontend básico para testes de interface.
+
+TypeScript – Tipagem no frontend/backend para melhor qualidade de código.
+
+🧠 Para que serve este projeto?
+Este projeto foi criado para demonstrar:
+
+Como um QA pode estruturar e automatizar testes de APIs.
+
+Como interagir com containers e bancos de dados reais.
+
+Como aplicar boas práticas de versionamento e documentação.
+
+📂 Organização
+/tests: testes Cypress e Postman
+
+/backend: API Node.js com Express
+
+/frontend: app Angular
+
+/docker: arquivos Docker e docker-compose
+
+/docs: documentação dos testes e resultados
