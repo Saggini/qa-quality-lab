@@ -1,0 +1,35 @@
+services: # Define os serviços que serão executados
+  db: # Serviço do banco de dados PostgreSQL
+    image: postgres:15 # Imagem do PostgreSQL versão 15
+    container_name: qaqualitylab_postgres # Nome do container
+    environment: # Variáveis de ambiente do container
+      POSTGRES_DB: qualitylab # Nome do banco de dados
+      POSTGRES_USER: postgres # Usuário do banco de dados
+      POSTGRES_PASSWORD: postgres # Senha do banco de dados
+    ports:
+      - "5432:5432" # Mapeamento da porta 5432 do host para o container
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql # Script de inicialização do banco
+    networks:
+      - qa-network # Rede personalizada
+
+  backend: # Serviço do backend da aplicação
+    build: ./backend # Diretório de build do backend
+    container_name: qaqualitylab_backend # Nome do container
+    ports:
+      - "3000:3000" # Mapeamento da porta 3000 do host para o container
+    depends_on:
+      - db # Garante que o serviço db seja iniciado antes
+    environment: # Variáveis de ambiente do backend
+      DB_HOST: db # Host do banco de dados
+      DB_USER: postgres # Usuário do banco de dados
+      DB_PASS: postgres # Senha do banco de dados
+      DB_NAME: qualitylab # Nome do banco de dados
+      DB_PORT: 5432 # Porta do banco de dados
+      PORT: 3000 # Porta do backend
+    networks:
+      - qa-network # Rede personalizada
+
+networks:
+  qa-network:
+    driver: bridge # Tipo de driver da rede (bridge)

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>QA QualityLab - Bugs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1> QA QualityLab - Lista de Bugs 🐞</h1>
+
+  <form id="bugForm">
+    <input type="text" id="titulo" placeholder="Título" required>
+    <input type="text" id="descricao" placeholder="Descrição">
+    <select id="status">
+      <option value="Aberto">Aberto</option>
+      <option value="Em progresso">Em progresso</option>
+      <option value="Resolvido">Resolvido</option>
+    </select>
+    <select id="prioridade">
+      <option value="Alta">Alta</option>
+      <option value="Média">Média</option>
+      <option value="Baixa">Baixa</option>
+    </select>
+    <button type="submit">Adicionar Bug</button>
+  </form>
+
+  <ul id="lista-bugs"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
